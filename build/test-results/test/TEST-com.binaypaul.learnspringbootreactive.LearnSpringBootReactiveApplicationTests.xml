@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-08-09T11:29:28.722Z" hostname="Binays-MacBook-Air.local" time="1.341">
+<testsuite name="com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-08-10T19:21:51.155Z" hostname="Binays-MacBook-Air.local" time="1.45">
   <properties/>
-  <testcase name="contextLoads()" classname="com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests" time="0.401"/>
-  <system-out><![CDATA[16:59:28.849 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests]: LearnSpringBootReactiveApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:59:28.946 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplication for test class com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests
-16:59:29.015 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests]: LearnSpringBootReactiveApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-16:59:29.016 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplication for test class com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests
+  <testcase name="contextLoads()" classname="com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests" time="0.419"/>
+  <system-out><![CDATA[00:51:51.238 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests]: LearnSpringBootReactiveApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:51:51.293 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplication for test class com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests
+00:51:51.334 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests]: LearnSpringBootReactiveApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:51:51.335 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplication for test class com.binaypaul.learnspringbootreactive.LearnSpringBootReactiveApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -14,14 +14,15 @@
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
 
- :: Spring Boot ::                (v4.0.6)
+ :: Spring Boot ::                (v4.1.0)
 
-2026-08-09T16:59:29.195+05:30  INFO 82652 --- [LearnSpringBootReactive] [    Test worker] .LearnSpringBootReactiveApplicationTests : Starting LearnSpringBootReactiveApplicationTests using Java 25.0.3 with PID 82652 (started by binaypaul in /Users/binaypaul/learnings/github/LearnSpringBootReactive)
-2026-08-09T16:59:29.196+05:30  INFO 82652 --- [LearnSpringBootReactive] [    Test worker] .LearnSpringBootReactiveApplicationTests : No active profile set, falling back to 1 default profile: "default"
-2026-08-09T16:59:29.659+05:30  INFO 82652 --- [LearnSpringBootReactive] [    Test worker] .LearnSpringBootReactiveApplicationTests : Started LearnSpringBootReactiveApplicationTests in 0.602 seconds (process running for 1.596)
+2026-08-11T00:51:51.477+05:30  INFO 22962 --- [LearnSpringBootReactive] [    Test worker] .LearnSpringBootReactiveApplicationTests : Starting LearnSpringBootReactiveApplicationTests using Java 25.0.4 with PID 22962 (started by binaypaul in /Users/binaypaul/learnings/github/LearnSpringBootReactive)
+2026-08-11T00:51:51.477+05:30  INFO 22962 --- [LearnSpringBootReactive] [    Test worker] .LearnSpringBootReactiveApplicationTests : No active profile set, falling back to 1 default profile: "default"
+2026-08-11T00:51:51.999+05:30  INFO 22962 --- [LearnSpringBootReactive] [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-08-11T00:51:52.183+05:30  INFO 22962 --- [LearnSpringBootReactive] [    Test worker] .LearnSpringBootReactiveApplicationTests : Started LearnSpringBootReactiveApplicationTests in 0.824 seconds (process running for 1.421)
 ]]></system-out>
   <system-err><![CDATA[Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build as described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org.mockito/org/mockito/Mockito.html#0.3
-WARNING: A Java agent has been loaded dynamically (/Users/binaypaul/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.17.8/f09415827a71be7ed621c7bd02550678f28bc81c/byte-buddy-agent-1.17.8.jar)
+WARNING: A Java agent has been loaded dynamically (/Users/binaypaul/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.18.10/9426d28828bdcdf42666bb7a68c468279ea78f59/byte-buddy-agent-1.18.10.jar)
 WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
 WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
 WARNING: Dynamic loading of agents will be disallowed by default in a future release
