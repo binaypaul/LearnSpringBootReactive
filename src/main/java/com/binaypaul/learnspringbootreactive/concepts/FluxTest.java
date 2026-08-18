@@ -4,7 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.util.function.Tuple3;
+import reactor.util.function.Tuple2;
 
 public class FluxTest {
     private Flux<String> testFlux() {
@@ -14,7 +14,7 @@ public class FluxTest {
     }
 
     private Flux<String> testMap() {
-        return Flux.just("Java", "Python", "Rust", "C++").map(data -> data.toUpperCase());
+        return Flux.just("Java", "Python", "Rust", "C++").map(data -> data.toUpperCase()).block());
     }
 
     private Flux<String> testFlatMap() {
@@ -31,36 +31,33 @@ public class FluxTest {
     }
 
     private Flux<Integer> testSkipUntill() {
-        return Flux.range(1, 20).skipUntil(i -> i == 10);
+        return Flux.range(1, 10).skipUntil(i -> i == 5);
     }
 
     private Flux<Integer> testSkipWhile() {
-        return Flux.range(1, 20).skipWhile(i -> i <= 10);
+        return Flux.range(1, 10).skipWhile(i -> i <= 5);
     }
 
     private Flux<Integer> testConcat() {
-        var flux1 = Flux.range(1, 20);
-        var flux2 = Flux.range(101, 20);
-        var flux3 = Flux.range(1001, 20);
-        return Flux.concat(flux1, flux2, flux3, Mono.just(10_000));
+        var flux1 = Flux.range(1, 10);
+        var flux2 = Flux.range(101, 10);
+        return Flux.concat(flux1, flux2, Mono.just(10_000));
     }
 
     private Flux<Integer> testMerge() {
-        var flux1 = Flux.range(1, 20)
+        var flux1 = Flux.range(1, 10)
                 .delayElements(Duration.ofMillis(500));
-        var flux2 = Flux.range(101, 20)
+        var flux2 = Flux.range(101, 10)
                 .delayElements(Duration.ofMillis(500));
         return Flux.merge(flux1, flux2, Mono.just(10_000));
     }
 
-    private Flux<Tuple3<Integer, Integer, Integer>> testZip() {
+    private Flux<Tuple2<Integer, Integer>> testZip() {
         var flux1 = Flux.range(1, 10)
                 .delayElements(Duration.ofMillis(500));
-        var flux2 = Flux.range(101, 20)
+        var flux2 = Flux.range(101, 10)
                 .delayElements(Duration.ofMillis(500));
-        var flux3 = Flux.range(1001, 20)
-                .delayElements(Duration.ofMillis(500));
-        return Flux.zip(flux1, flux2, flux3);
+        return Flux.zip(flux1, flux2);
     }
 
     private Mono<List<Integer>> testCollection() {
@@ -70,17 +67,28 @@ public class FluxTest {
 
     public static void main(String[] args) throws InterruptedException {
         FluxTest fluxPublisher = new FluxTest();
+        // System.out.println("\ntestFlux");
         // fluxPublisher.testFlux().subscribe(System.out::println);
-        // fluxPublisher.testMap().subscribe(System.out::println);
-        // fluxPublisher.testFlatMap().subscribe(System.out::println);
+        System.out.println("\ntestMap");
+        fluxPublisher.testMap().subscribe(System.out::println);
+        System.out.println("\ntestFlatMap");
+        fluxPublisher.testFlatMap().subscribe(System.out::println);
+        // System.out.println("\ntestFlatMapMany");
         // fluxPublisher.testFlatMapMany().subscribe(System.out::println);
+        // System.out.println("\ntestDelayAndSkip");
         // fluxPublisher.testDelayAndSkip().doOnNext(System.out::println).blockLast();
+        // System.out.println("\ntestSkipUntill");
         // fluxPublisher.testSkipUntill().subscribe(System.out::println);
+        // System.out.println("\ntestSkipWhile");
         // fluxPublisher.testSkipWhile().subscribe(System.out::println);
+        // System.out.println("\ntestConcat");
         // fluxPublisher.testConcat().subscribe(System.out::println);
+        // System.out.println("\ntestMerge");
         // fluxPublisher.testMerge().doOnNext(System.out::println).blockLast();
+        // System.out.println("\ntestZip");
         // fluxPublisher.testZip().doOnNext(System.out::println).blockLast();
-        fluxPublisher.testCollection().doOnNext(System.out::println).block();
-        System.out.println("Completed..!");
+        // System.out.println("\ntestCollection");
+        // fluxPublisher.testCollection().doOnNext(System.out::println).block();
+        System.out.println("\nCompleted..!");
     }
 }
